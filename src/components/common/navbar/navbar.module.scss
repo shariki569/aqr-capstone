@@ -1,0 +1,31 @@
+@use "../../../styles/utilities/" as *;
+
+.container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    width: 100%;
+    padding: $base-padding-x;
+    // background-color: transparent;
+    font-size: $f-small;
+    z-index: 10;
+    overflow: hidden;
+    transition: 0.2s background-color ease-in-out;
+    .links {
+        display: flex;
+        gap: 2rem;
+        margin-inline: auto;
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        color: inherit;
+    }
+}
+
+
+.container.scrolled {
+    background-color: $primary;
+}

@@ -1,0 +1,23 @@
+@use '../../../styles/utilities/' as *;
+
+.container{
+    color: $primary;
+    @include flexBoxColumn(0.3rem, center, center);
+    text-align: center;
+    @include centerAndSet(1300px, 4rem);
+
+    h2{
+        font-family: $primary-font;
+        font-size: $f-xlarge;
+        font-weight: $w-light;
+    }
+    h4{
+        color: $tertiary;
+        font-size: $f-medium;
+        
+    }
+    p{
+        font-size: $f-small;
+        font-weight: $w-medium;
+    }
+}

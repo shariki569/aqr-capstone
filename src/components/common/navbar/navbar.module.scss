@@ -6,16 +6,25 @@
     align-items: center;
     height: 5rem;
     width: 100%;
-    padding: $base-padding-x;
-    // background-color: transparent;
-    font-size: $f-small;
+    padding: $base-spacing-x;
+    font-size: $f-medium;
     z-index: 10;
+    color: $gray-200;
     overflow: hidden;
     transition: 0.2s background-color ease-in-out;
+    .logo {
+        height: 75px;
+        width: 75px;
+        margin-right: auto;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
     .links {
         display: flex;
         gap: 2rem;
-        margin-inline: auto;
+        margin-right: auto;
     }
 
     button {
@@ -23,8 +32,20 @@
         border: none;
         color: inherit;
     }
-}
+    @include devices(mobile) {
+        .logo {
+            height: 60px;
+            width: 60px;
+        }
+        .links {
+            display: none;
+        }
 
+        button {
+            display: none;
+        }
+    }
+}
 
 .container.scrolled {
     background-color: $primary;

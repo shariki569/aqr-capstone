@@ -4,20 +4,37 @@
     color: $primary;
     @include flexBoxColumn(0.3rem, center, center);
     text-align: center;
-    @include centerAndSet(1300px, 4rem);
+    @include centerAndSet(1300px, 2rem);
 
+    width: 100%;
+    padding: $large-spacing-y;
     h2{
         font-family: $primary-font;
-        font-size: $f-xlarge;
-        font-weight: $w-light;
+        font-size: $f-xxlarge;
+        font-weight: $w-bold;
+        width: 100%;
+
+        &::after {
+            display: block;
+            margin: 0 auto;
+            content: "";
+            width: 40px;    
+            height: 3px;
+            background-color: $tertiary;
+        }
     }
     h4{
         color: $tertiary;
-        font-size: $f-medium;
+        font-size: $f-large;
+        width: 100%;
         
     }
     p{
-        font-size: $f-small;
-        font-weight: $w-medium;
+        font-size: $f-medium;
+        // font-weight: $w-medium;
+        color: $gray-900;
+        padding: 0 10%;
+        margin: $base-spacing-y;
+      
     }
 }

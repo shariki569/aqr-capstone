@@ -8,6 +8,11 @@
     gap: $gap;
 }
 
+@mixin justifyIndent {
+    text-align: justify;
+    text-indent: 1rem;
+}
+
 @mixin backgroundColorOpacity($color, $opacity, $blend) {
     background-color: $color;
     opacity: $opacity;
@@ -30,7 +35,6 @@
 
 @mixin flexBoxRow($gap, $justify, $align) {
     display: flex;
-    flex-direction: column;
     align-items: $align;
     justify-content: $justify;
     gap: $gap;
@@ -39,4 +43,24 @@
     margin-inline: auto;
     max-width: $maxWidth;
     padding-inline: $paddingInline;
+}
+
+@mixin gridView($minMaxValue, $gapValue) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(#{$minMaxValue}, 1fr));
+    gap: $gapValue;
+}
+
+@mixin devices($breakpoint) {
+    @if $breakpoint == tablet {
+        @media only screen and (max-width: 680px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == mobile {
+        @media only screen and (max-width: 418px) {
+            @content;
+        }
+    }
 }

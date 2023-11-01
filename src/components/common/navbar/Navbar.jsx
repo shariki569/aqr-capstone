@@ -5,6 +5,7 @@ import styles from './navbar.module.scss'
 import logo from 'public/AquaLogo.svg'
 import Image from 'next/image'
 import { links } from './links'
+import AuthLinks from '@/components/authLinks/AuthLinks'
 const Navbar = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
@@ -33,15 +34,15 @@ const Navbar = () => {
 
     return (
         <nav className={navbarClasses.join(' ')}>
-            <Link href="/"><Image src={logo} alt='logo' width={'75'} height={'75'} /></Link>
+            <div className={styles.logo}>
+                <Link href="/"><Image src={logo} alt='logo'  /></Link>
+            </div>
             <div className={styles.links}>
                 {links.map((link) => (
                     <Link key={link.id} href={link.url}>{link.title}</Link>
                 ))}
             </div>
-            <div>
-                <button onClick={() => console.log('hello')}>Log Out</button>
-            </div>
+           <AuthLinks/>
         </nav>
     )
 }

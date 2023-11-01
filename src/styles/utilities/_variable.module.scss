@@ -6,6 +6,9 @@ $primary-font: 'Britney-Regular';
 $secondary-font: 'Quicksand';
 
 //size
+
+$f-mobile: 0.7rem;
+
 $f-small: 0.8rem;
 $f-medium: 1rem;
 $f-large: 1.5rem;;
@@ -16,15 +19,35 @@ $f-xxxlarge: 3rem;
 $w-light: 300;
 $w-normal: 400;
 $w-medium: 500;
+$w-semibold: 600;
+$w-bold: 700;
 //fonts
 
 
+//spacing
 
-$base-padding-y: 1rem 0;
-$base-padding: 1rem;
-$base-padding-x: 0px 1rem;
-$base-margin: 1rem;
+$small-spacing-y: 0.5rem 0;
+$small-spacing: 0.5rem;
+$small-spacing-x: 0rem 0.5rem;
 
+$base-spacing-y: 1rem 0;
+$base-spacing: 1rem;
+$base-spacing-x: 0px 1rem;
+
+
+$medium-spacing: 1.5rem;
+$medium-spacing-x: 0rem 1.5rem;
+$medium-spacing-y: 1.5rem 0;
+
+$large-spacing: 2rem;
+$large-spacing-x: 0rem 2rem;   
+$large-spacing-y: 2rem 0;
+//padding
 
 
 $base-gap: 5rem;
+
+
+//border
+$border-radius: 0.5rem;
+//border

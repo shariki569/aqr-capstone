@@ -1,0 +1,12 @@
+@use '../../styles/utilities/' as *;
+
+.container{
+    height: 100dvh;
+    @include flexBoxColumn(0.3rem, center, center);
+    background-color: $primary;
+
+
+}
+.card{
+    padding: 500px;
+}

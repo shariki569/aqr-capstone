@@ -2,5 +2,40 @@
 
 
 .container{
-    display: flex;
+    @include flexBoxRow(1rem, center, flex-start);
+    background-color: $primary;
+    color: $gray-400;
+    padding-inline: $large-spacing;
+    .footerSection{
+        // @include centerAndSet(1300px, 0rem);
+        // @include flexBoxColumn(0.3rem, center, start);
+        padding: $small-spacing-y;
+        width: 100%;
+        height: 100%;
+        .footerItems{
+            width: 100%;
+            padding: $small-spacing;
+            .footerTitle{
+                padding: $small-spacing-y;
+            }
+            .footerDescription{
+              @include flexBoxRow(1rem, flex-start, center);
+
+              ul{
+                list-style: none;
+                width: 100%;
+                @include flexBoxColumn(0rem, center, flex-start);
+                li{
+                    width: 100%;
+                    @include flexBoxRow(1rem, flex-start, center);
+                    padding: $small-spacing-y;
+                }
+              }
+            }
+
+            .footerLinks{
+                @include flexBoxColumn(1rem, center, flex-start);
+            }
+        }
+    }
 }

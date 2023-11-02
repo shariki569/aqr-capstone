@@ -2,7 +2,7 @@ import { Inter, Quicksand } from "next/font/google";
 import "../styles/globals.scss";
 import Navbar from "@/components/common/navbar/Navbar";
 import Footer from "@/components/common/footer/Footer";
-
+import AuthProvider from "@/providers/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 const quickSand = Quicksand({ subsets: ["latin"] });
@@ -15,11 +15,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={quickSand.className}>
-        <div className="container">
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+        <AuthProvider>
+          <div className="container">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );

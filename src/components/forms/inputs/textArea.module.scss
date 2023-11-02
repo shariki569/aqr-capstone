@@ -1,0 +1,25 @@
+@use "../../../styles/utilities/" as *;
+
+.container {
+    width: 100%;
+
+    .textArea {
+        @include flexBoxColumn(0.3rem, center, flex-start);
+        padding: $base-spacing-y;
+        .textAreaInput {
+            resize: none;
+            padding: $small-spacing;
+            border: $small-border-thickness $gray-200;
+            border-radius: $border-radius;
+
+            &:hover {
+                outline: $small-border-thickness $gray-200;
+            }
+
+            &:focus {
+                border-radius: 0px;
+                border-bottom: $large-border-thickness $primary;
+            }
+        }
+    }
+}

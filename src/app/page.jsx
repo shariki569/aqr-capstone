@@ -10,6 +10,7 @@ import home4 from 'public/homeImages/home4.webp'
 import home5 from 'public/homeImages/home5.webp'
 import home6 from 'public/homeImages/home6.webp'
 import Card from '@/components/card/Card'
+import FacilitiesSection from '@/components/section/facilitiesSection/FacilitiesSection'
 export default function Home() {
 
 
@@ -24,7 +25,7 @@ export default function Home() {
           <p className={styles.description}>Surrender to the Allure of Our Resort</p>
         </div>
       </div>
-      <HeaderSection main="Escape to Your Perfect Getaway" subheading="Welcome to Aqua Cainta Resorts Paradise" desc="At Aqua Cainta Resort, we believe in creating more than just vacations; we craft unforgettable staycation experiences. Our pristine haven offers a symphony of relaxation, adventure, and indulgence, making it the ultimate destination for your next retreat.e" />
+      <HeaderSection main="Escape to Your Perfect Getaway" subheading="Welcome to Aqua Cainta Resorts Paradise" desc="At Aqua Cainta Resort, we believe in creating more than just vacations; we craft unforgettable staycation experiences. Our pristine haven offers a symphony of relaxation, adventure, and indulgence, making it the ultimate destination for your next retreat." />
       <div className={styles.container}>
         <HeaderSection main="Discover Our Oasis" />
         <TwoSection
@@ -50,6 +51,7 @@ export default function Home() {
             ]
           }
         />
+        <FacilitiesSection/>
       </div>
     </>
 

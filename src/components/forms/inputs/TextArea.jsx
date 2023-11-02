@@ -8,16 +8,16 @@ const TextArea = ({ label, value, onChange, placeholder, rows, cols, error, onKe
 
     const [localValue, setLocalValue] = useState(value);
     const [localError, setLocalError] = useState(error);
-    const [inputClassname, setInputClassname] = useState(styles.textAreaInput);
+    // const [inputClassname, setInputClassname] = useState(styles.textAreaInput);
 
     useEffect(() => {
         setLocalValue(value);
     }, [value]);
 
-    useEffect(() => {
-        setLocalError(error);
-        error ? setInputClassname(`${styles.textAreaInput}  ${styles.textAreaInputError }`) : setInputClassname(styles.textAreaInput);
-    }, [error])
+    // useEffect(() => {
+    //     setLocalError(error);
+    //     error ? setInputClassname(`${styles.textAreaInput}  ${styles.textAreaInputError }`) : setInputClassname(styles.textAreaInput);
+    // }, [error])
 
     const handleChange = (e) => {
         // Clear the local error when the input value changes
@@ -30,11 +30,11 @@ const TextArea = ({ label, value, onChange, placeholder, rows, cols, error, onKe
     };
 
     return (
-        <div className={styles.textAreaContainer}>
+        <div className={styles.container}>
             <div className={styles.textArea}>
                 {label && <label className={styles.label}>{label}</label>}
                 <textarea
-                    className={inputClassname}
+                    className={styles.textAreaInput}
                     value={localValue}
                     onChange={handleChange}
                     placeholder={placeholder}

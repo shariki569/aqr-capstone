@@ -1,6 +1,41 @@
-@use "../../../styles/utilities/" as *;
+@use "../../styles/utilities/" as *;
 
 
-.container{
-    font-size: $f-small;
+.btn{
+    font-weight: $w-bold;
+    color: $primary;
+    position: relative;
+    margin-inline: auto;
+    margin-top: $base-spacing;
+    background-color: transparent;
+    border: $base-border-thickness $primary;
+    padding: $base-button-spacing;
+    cursor: pointer;
+    border-radius: $border-radius;
+    overflow: hidden;
+    z-index: 99;
+    transition: all 0.3s;
+    width: 100%;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: $primary;
+        height: 100%;
+        width: 100%;
+        transform: translateX(-100%);
+        transition: all 0.3s;
+        z-index: -5;
+    }
+
+    &:hover{
+        color: $gray-300;
+    }
+
+    &:hover::before {
+        transform: translateX(0);
+        
+    }
 }

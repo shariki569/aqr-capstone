@@ -7,10 +7,10 @@ const Contact = () => {
 
   return (
     <>
-      <Banner title="Contact Us" image={bannerImg} />
+      <Banner title="Contact Us" image={bannerImg} position='bottom'/>
       <div className={styles.container}>
         <div className={styles.item}>
-
+          <h2>Contact Us through</h2>
         </div>
         <div className={styles.item}>
           <ContactForm/>

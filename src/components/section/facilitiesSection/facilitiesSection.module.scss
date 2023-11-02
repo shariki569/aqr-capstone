@@ -1,0 +1,76 @@
+@use "../../../styles/utilities/" as *;
+
+.container {
+    background: linear-gradient(rgba($primary, 0.9), rgba(8, 8, 8, 0.8)), center/cover no-repeat fixed;
+    background-color: $primary;
+
+    h2 {
+        color: $gray-200;
+    }
+    p {
+        color: $gray-200;
+    }
+
+    .facilities {
+        @include centerAndSet(1300px, 4rem);
+
+        .facilityItems {
+            @include flexBoxRow(2rem, center, flex-start);
+            @include gridView(15rem, 1rem);
+
+            .facilityItem {
+                @include flexBoxColumn(1rem, flex-start, center );
+                position: relative;
+                height: 70dvh;
+                .imageWrap {
+                    position: relative;
+                    height: 100%;
+                    max-height: 400px;
+                    width: 100%;
+                    aspect-ratio: 1/2;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .content {
+                    position: absolute;
+                    bottom: -100px;
+                    @include flexBoxColumn(0.3rem, flex-start, center);
+                    min-height: 250px;
+                    // padding: $base-spacing;
+                    h2 {
+                       padding: $small-spacing;
+                        color: $gray-900;
+                        font-size: $f-large;
+                    }
+                    position: absolute;
+                    bottom: 0;
+                    @include cardContainer(0.5rem);
+
+                    .description {
+                        padding: $base-spacing;
+                        
+                        p {
+                            color: $gray-900;
+                        }
+                    }
+                }
+            }
+        }
+
+        .linkButton {
+            padding-block: $large-spacing;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .link{
+               margin-left: auto;
+               margin-right: auto;
+            }
+
+
+        }
+    }
+}

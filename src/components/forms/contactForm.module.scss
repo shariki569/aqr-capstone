@@ -1,0 +1,6 @@
+@use '../../styles/utilities/' as *;
+
+
+.container{
+    @include flexBoxColumn(0.3rem, center, center);
+}

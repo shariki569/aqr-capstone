@@ -1,11 +1,23 @@
-import React from 'react'
+import styles from './contact.module.scss'
+import Banner from '@/components/banner/Banner'
+import bannerImg from '@/../../public/contactImages/contact1.webp'
+import ContactForm from '@/components/forms/ContactForm'
 
 const Contact = () => {
-  console.log('hello')
+
   return (
-    <div>
-       Contact Us
-    </div>
+    <>
+      <Banner title="Contact Us" image={bannerImg} />
+      <div className={styles.container}>
+        <div className={styles.item}>
+
+        </div>
+        <div className={styles.item}>
+          <ContactForm/>
+        </div>
+      </div>
+    </>
+
   )
 }
 

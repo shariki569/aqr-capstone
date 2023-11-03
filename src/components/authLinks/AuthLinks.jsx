@@ -3,25 +3,36 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import styles from './authLinks.module.scss'
 import { links } from '../common/navbar/links'
+import { signOut, useSession } from 'next-auth/react'
+
 const AuthLinks = () => {
     const [open, setOpen] = useState(false)
-    const status = "Not authenticated"
+    // const status = "Not authenticated"
+
+    const { data: session, status } = useSession();
 
     const burgerClass = [styles.burger]
     const toggleMenu = () => {
         setOpen(!open)
     }
 
+    console.log(session)
     return (
         <>
-            {status == "Not authenticated" ? (
+            {status == "unauthenticated" ? (
                 <Link href="/dashboard/login" className={styles.link}>Login</Link>
             ) : (
                 <>
-                    <span className={styles.link}>Logout</span>
+                <span>Hi, {session?.user.name}</span>
+                <span className={styles.link} onClick={signOut}>Logout</span>
                 </>
+
             )}
-            <div className={`${styles.burger} ${open ? styles.cross : '' }`} onClick={toggleMenu}>
+
+
+
+
+            <div className={`${styles.burger} ${open ? styles.cross : ''}`} onClick={toggleMenu}>
                 <div className={styles.bar}></div>
                 <div className={styles.bar}></div>
                 <div className={styles.bar}></div>

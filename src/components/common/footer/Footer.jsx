@@ -1,3 +1,4 @@
+
 import React from 'react'
 import styles from './footer.module.scss'
 import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
@@ -86,12 +87,6 @@ const Footer = async () => {
       <div className={styles.footerSection}>
 
       </div>
-      {/* <div >
-        @2023 Aqua Cainta all rights reserve
-      </div>
-      <div>
-        
-      </div> */}
     </footer>
   )
 }

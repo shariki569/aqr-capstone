@@ -1,5 +1,11 @@
 @use '../../styles/utilities/' as *;
 
+
+
+.link{
+    cursor: pointer;
+}
+
 .burger {
     position: relative;
     height: 16px;
@@ -9,6 +15,7 @@
     display: none;
     z-index: 10;
     transition: transform 0.5s ease-in-out;
+
 
     &.cross {
         

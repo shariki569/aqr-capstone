@@ -1,37 +1,65 @@
-import prisma from "@/utilities/connect";
+// import { registerUser } from "@/utilities/controllers/Users";
 
-export const register = async (data) => {
-  try {
+import { NextResponse } from "next/server";
+import bcrypt from 'bcrypt'
 
-    const hashedPass = await bcrypt.hash(data.password, 10);
-    if (data.email) {
-      const existingEmail = await prisma.user.findUnique({
-        where: { email: data.email },
-      });
+// export const POST = async (request) => {
+//   try {
+//     const json = await request.json();
+//     const user = await registerUser(json);
+//     return new Response(JSON.stringify(user), { status: 200 });
+//   } catch (err) {
+//     return new Response(JSON.stringify({ error: err.message }), {
+//       status: 500,
+//     })
+//   }
+// }
 
-      if (existingEmail) {
-        throw new Error("Email already taken");
-      }
+export const POST = async (req) => {
+   const body = await req.json();
+   const {name, email, password} = body;
+
+   if(!name || !email || !password) {
+      return new NextResponse(JSON.stringify({ error: 'Missing required fields' }), { status: 400 });
+   }
+
+   const exist = await prisma.user.findUnique({
+    where: {
+      email: email
     }
+   })
 
-    if (data.username) {
-      const existingUsername = await prisma.user.findUnique({
-        where: { username: data.username },
-      });
+   if(exist) {
+      return new NextResponse(JSON.stringify({ error: 'User already exists' }), { status: 400 });
+   }
 
-      if (existingUsername) {
-        throw new Error("Username already taken");
-      }
+   const hashedPassword = await bcrypt.hash(password, 10)
+
+   const user = await prisma.user.create({
+    data: {
+      name,
+      email,
+      password: hashedPassword  
     }
+   });
+   return NextResponse.json(user);
+}
 
-    const result = await prisma.user.create({
-        data: {
-            'email': data.email,
-            'username': data.username,
-            'password': hashedPass
-        }
-    })
-  } catch (err) {
-    throw new Error(err.message);
-  }
-};
+// export default async function handler(req, res) {
+//   if (req.method === 'POST') {
+//     try {
+//       // Call the registerUser function with the request body as data
+//       const user = await registerUser(req.body);
+
+//       // Send the response with the created user
+//       res.status(200).json(user);
+//     } catch (err) {
+//       // Send an error response
+//       res.status(500).json({ error: err.message });
+//     }
+//   } else {
+//     // Handle any other HTTP method
+//     res.setHeader('Allow', ['POST']);
+//     res.status(405).end(`Method ${req.method} Not Allowed`);
+//   }
+// }

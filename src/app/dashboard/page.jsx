@@ -1,6 +1,7 @@
 import React from 'react'
+import RootLayout from '../layout'
 
-const   Dashboard = () => {
+const Dashboard = () => {
   return (
     <div>
         Dashboard
@@ -8,4 +9,6 @@ const   Dashboard = () => {
   )
 }
 
-export default  Dashboard
+Dashboard.Layout = props => <RootLayout {...props} showNavAndFooter={false}/> 
+
+export default Dashboard

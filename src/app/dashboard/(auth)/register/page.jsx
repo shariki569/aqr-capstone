@@ -4,38 +4,38 @@ import styles from './register.module.scss'
 import TextInput from '@/components/forms/inputs/TextInput'
 import Button from '@/components/button/Button'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 const Register = () => {
   const [err, setErr] = useState(false);
-
-
+  const router = useRouter();
+  const [data, setData] = useState({
+    email: '',
+    password: '',
+    name: ''
+  })
 
   const handleSubmit = async (e) => {
-    const router = useRouter();
     e.preventDefault();
-
-    const name = e.target[0].value;
-    const email = e.target[1].value;
-    const password = e.target[2].value;
-
     try {
       const res = await fetch('/api/auth/register', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-          name,
-          email,
-          password
-        })
+        body: JSON.stringify(data)
       })
-      res.status === 201 && router.push('/dashboard/login?success=Account created successfully');
+    
+      const userInfo = await res.json();
+      console.log(userInfo)
+      router.push("/dashboard/login");
+
     } catch (err) {
       setErr(true);
+      console.error(err)
     }
   }
+
 
   return (
     <div className={styles.container}>
@@ -43,10 +43,26 @@ const Register = () => {
         <div className={styles.login}>
           <h2 className={styles.title}>Create an Account</h2>
           <form action="" onSubmit={handleSubmit}>
-            <TextInput label="Username" type='text' />
-            <TextInput label="Email" type='email' />
-            <TextInput label="Password" type="password" />
-            <Button text="Register" />
+            <TextInput
+              label="Username"
+              type='text'
+              value={data.name}
+              onChange={(e) => setData({ ...data, name: e.target.value })}
+            />
+            <TextInput
+              label="Email"
+              type='email'
+              value={data.email}
+              onChange={(e) => setData({ ...data, email: e.target.value })}
+            />
+            <TextInput
+              label="Password"
+              type="password"
+              value={data.password}
+              onChange={(e) => setData({ ...data, password: e.target.value })}
+            />
+            <Button text="Register" type='submit' />
+            {/* <button>Register</button> */}
           </form>
           {err && 'Something went wrong'}
         </div>

@@ -1,1 +1,27 @@
 @use '../../../styles/utilities/' as *;
+
+
+.container{
+    margin: $small-spacing-y;
+    @include flexBoxColumn(0.3rem, center, flex-start);
+    width: 100%;
+    
+    .input{
+        border-radius: $border-radius;
+        width: 100%;
+        border: $small-border-thickness $gray-300;
+        font-size: $f-small;
+        padding: $small-spacing;
+        transition: 0.1s ease-in;
+        &:hover{
+            outline: $small-border-thickness $gray-200;
+        }
+
+        &:focus {
+            border-radius: 0px;
+            border-bottom: $large-border-thickness $primary;
+        }
+    };
+
+
+}

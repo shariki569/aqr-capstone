@@ -1,4 +1,6 @@
 @use "../utilities/variable.module.scss" as *;
+@use '../utilities/colorPallet.scss' as *;
+
 
 @mixin centerColumnSpaceBetween($gap) {
     display: flex;
@@ -66,7 +68,7 @@
 }
 
 
-@mixin cardContainer() {
+@mixin cardContainer( $border-radius ) {
     background-color: $gray-100;
     border-radius: $border-radius;
     overflow: hidden;

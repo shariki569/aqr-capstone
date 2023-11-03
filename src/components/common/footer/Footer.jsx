@@ -1,9 +1,26 @@
+
 import React from 'react'
 import styles from './footer.module.scss'
 import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
 import { BiMobileAlt } from "react-icons/bi";
 import Link from 'next/link';
-const Footer = () => {
+
+async function getData() {
+  const res = await fetch(`https://capston-aq-backend-production.up.railway.app/api/contacts/1`)
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data')
+  }
+
+  return res.json()
+}
+
+const Footer = async () => {
+
+  const data = await getData()
 
   const footerLinks = [
     { title: "About Us", path: "/about-us" },
@@ -23,7 +40,7 @@ const Footer = () => {
           </div>
           <div className={styles.footerDescription}>
             <FiMapPin className={styles.icon} size={25} />
-            <p>Sitio Cainta, Barangay Pooc, City of Talisay, Cebu City, Philippines</p>
+            <p>{data?.con_address}</p>
           </div>
         </div>
         <div className={styles.footerItems}>
@@ -34,11 +51,11 @@ const Footer = () => {
             <ul>
               <li>
                 <FiPhone className={styles.icon} size={25} />
-                <p>(032) 266 0914</p>
+                <p>{data?.con_telphone}</p>
               </li>
               <li>
                 <BiMobileAlt className={styles.icon} size={25} />
-                <p>0919 503 6715</p>
+                <p>{data?.con_cellphone}</p>
               </li>
             </ul>
           </div>
@@ -49,7 +66,7 @@ const Footer = () => {
           </div>
           <div className={styles.footerDescription}>
             <FiMail className={styles.icon} size={25} />
-            <p>aqua.cainta.resort@gmail.com</p>
+            <p>{data?.con_email}</p>
           </div>
         </div>
       </div>
@@ -70,12 +87,6 @@ const Footer = () => {
       <div className={styles.footerSection}>
 
       </div>
-      {/* <div >
-        @2023 Aqua Cainta all rights reserve
-      </div>
-      <div>
-        
-      </div> */}
     </footer>
   )
 }

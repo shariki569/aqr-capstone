@@ -1,12 +1,13 @@
-import React from 'react'
-import styles from './Button.module.css'
-import Link from 'next/link'
+"use client"
 
-const Button = ({url, text}) => {
+import React from 'react'
+import styles from './button.module.scss'
+
+const Button = ({ text, onClick, type }) => {
   return (
-    <Link href={url}>
-        <button style={styles.container}>{text}</button>
-    </Link>
+
+    <button onClick={onClick} className={styles.btn} type={type}>{text}</button>
+
   )
 }
 

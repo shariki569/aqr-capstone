@@ -2,5 +2,53 @@
 
 
 .container{
+    // height: 100%;
+    // min-height: 100dvh;
+    width: auto;
     @include flexBoxColumn(0.3rem, center, center);
+    @include cardContainer(0.5rem);
+    padding: $base-spacing;
+
+    .title{
+        text-align: center;
+        color: $primary;
+        font-size: $f-large;
+    }
+
+    .btn{
+        display: flex;
+        position: relative;
+        margin-inline: auto;
+        display: flex;
+        background-color: transparent;
+        border: $base-border-thickness $primary;
+        padding: $base-button-spacing;
+        cursor: pointer;
+        border-radius: $border-radius;
+        overflow: hidden;
+        z-index: 99;
+        transition: all 0.3s;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: $primary;
+            height: 100%;
+            width: 100%;
+            transform: translateX(-100%);
+            transition: all 0.3s;
+            z-index: -5;
+        }
+
+        &:hover{
+            color: $gray-300;
+        }
+
+        &:hover::before {
+            transform: translateX(0);
+            
+        }
+    }
 }

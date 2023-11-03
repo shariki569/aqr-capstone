@@ -67,63 +67,62 @@ const ContactForm = () => {
     };
 
     return (
-      
-            <div className={styles.container}>
-                <div className={styles.form}>
-                    <form onSubmit={handleSubmit}>
-                        <h3 className="form-title">Please reach out to us!</h3>
+        <div className={styles.container}>
+            <div className={styles.form}>
+                <form onSubmit={handleSubmit}>
+                    <h3 className={styles.title}>Please reach out to us!</h3>
 
-                        <TextInput
-                            label="Name:"
-                            type="text"
-                            value={contactDetails.name}
-                            onChange={(e) => setName(e.target.value)}
-                            placeholder="Your Name"
-                            error={contactDetails.nameError}
-                        />
+                    <TextInput
+                        label="Name:"
+                        type="text"
+                        value={contactDetails.name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Your Name"
+                        error={contactDetails.nameError}
+                    />
 
-                        <TextInput
-                            label="Contact No.:"
-                            type="text"
-                            value={contactDetails.number}
-                            onChange={(e) => setNumber(e.target.value)}
-                            placeholder="0912 345 6789"
-                            maxLength="11"
-                            error={contactDetails.phoneError}
-                        />
+                    <TextInput
+                        label="Contact No.:"
+                        type="text"
+                        value={contactDetails.number}
+                        onChange={(e) => setNumber(e.target.value)}
+                        placeholder="0912 345 6789"
+                        maxLength="11"
+                        error={contactDetails.phoneError}
+                    />
 
-                        <TextInput
-                            label="Email:"
-                            type="text"
-                            value={contactDetails.email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder="email@123.com"
-                            error={contactDetails.emailError}
-                        />
+                    <TextInput
+                        label="Email:"
+                        type="text"
+                        value={contactDetails.email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="email@123.com"
+                        error={contactDetails.emailError}
+                    />
 
-                        <TextArea
-                            label="Message:"
-                            value={contactDetails.message}
-                            onChange={(e) => setMessage(e.target.value)}
-                            placeholder="Your Message"
-                            rows={10}
-                            cols={60}
-                            error={contactDetails.messageError}
-                        />
+                    <TextArea
+                        label="Message:"
+                        value={contactDetails.message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        placeholder="Your Message"
+                        rows={10}
+                        cols={60}
+                        error={contactDetails.messageError}
+                    />
 
-                        {contactDetails.loading ? (
-                            <button className="btn" disabled>
-                                Sending <DotLoader color="#36d7b7" size={15} />
-                            </button>
-                        ) : (
-                            <button type="submit" className="btn">
-                                Submit
-                            </button>
-                        )}
-                    </form>
-                </div>
+                    {contactDetails.loading ? (
+                        <button className={styles.btn} disabled>
+                            Sending <DotLoader color="#36d7b7" size={15} />
+                        </button>
+                    ) : (
+                        <button type="submit" className={styles.btn}>
+                            Submit
+                        </button>
+                    )}
+                </form>
             </div>
-      
+        </div>
+
     )
 }
 

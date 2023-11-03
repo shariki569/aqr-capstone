@@ -1,8 +1,7 @@
 @use "../../styles/utilities/" as *;
 
-
-.card{
+.card {
     background-color: $gray-100;
     border-radius: $border-radius;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-

@@ -11,16 +11,21 @@ export const links = [
     },
     {
         id: 3,
+        title: 'Accommodations',
+        url: '/accommodations',
+    },
+    {
+        id: 4,
         title: 'Contact Us',
         url: '/contact-us',
     },
     {
-        id: 4,
+        id: 5,
         title: 'Facilities',
         url: '/facilities',
     },
     {
-        id: 5,
+        id: 6,
         title: 'Blog',
         url: '/blog',
     },

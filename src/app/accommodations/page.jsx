@@ -19,7 +19,6 @@ const Accommodations = async () => {
 
     const data = await getData()
 
-
     return (
         <>
             <Banner title="Accommodation" image={image} position='center' />

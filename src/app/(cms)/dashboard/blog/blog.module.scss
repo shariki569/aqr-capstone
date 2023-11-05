@@ -1,0 +1,9 @@
+@use '../../../../styles/utilities/' as *;
+
+
+.container{
+    @include fullSize;
+    @include flexBoxRow(1rem, center, center);
+
+    // color: $error;
+}

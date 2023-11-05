@@ -6,8 +6,9 @@ const nextConfig = {
   images: {
     domains: [
       "res.cloudinary.com",
-      "images.pexel.com",
-    
+      "images.pexels.com",
+      "resortcainta.netlify.app",
+      "scontent.fceb3-1.fna.fbcdn.net"
     ],
   },
   reactStrictMode: true,

@@ -24,7 +24,7 @@
         border: $base-border-thickness $primary;
         padding: $base-button-spacing;
         cursor: pointer;
-        border-radius: $border-radius;
+        border-radius: $border-radius-small;
         overflow: hidden;
         z-index: 99;
         transition: all 0.3s;

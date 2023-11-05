@@ -10,7 +10,7 @@ export const generateToken = async (email, password) => {
     }
 
     const token = jwt.sign({userId : user.id}, process.env.JWT_SECRET, {expiresIn: '1hr'});
-    await prisma.validateToken.create({
+    await prisma.authToken.create({
         data: {
             token,
             userId: user.id

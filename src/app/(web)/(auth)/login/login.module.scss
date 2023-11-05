@@ -1,0 +1,35 @@
+@use '../../../../styles/utilities/' as *;
+
+
+.container{
+    height: 100dvh;
+    @include flexBoxColumn(0.3rem, center, center);
+    background-color: $primary;
+   
+
+    .card{
+        width: 100%;
+        min-width: 300px;
+        max-width: 350px;
+        @include cardContainer($border-radius-small);
+        padding: $large-spacing;
+    }
+
+    .socialLogin{
+        margin-top: $base-spacing;
+        @include flexBoxColumn(0.3rem, center, center);
+    }
+
+    .link{
+        text-align: center;
+        font-size: $f-small;
+        margin-top: $base-spacing;
+    }
+
+    h2{
+        text-align: center;
+    }
+}
+// .card{
+//     padding: 500px;
+// }

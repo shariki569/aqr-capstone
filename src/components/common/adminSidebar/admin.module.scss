@@ -1,0 +1,49 @@
+@use "../../../styles/utilities/" as *;
+
+.container {
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    height: 100%;
+
+    margin-right: auto;
+    background-color: $primary;
+    width: 15%;
+    min-width: 15%;
+    @include flexBoxColumn(0.3rem, center, center);
+    .logo {
+        height: 130px;
+        width: 100%;
+        margin: $small-spacing-y;
+        img {
+            @include fullSize;
+        }
+    }
+    .links {
+        width: 100%;
+        @include flexBoxColumn(0rem, center, flex-start);
+        h3 {
+            width: 100%;
+            color: $gray-200;
+            text-align: center;
+            padding: $small-spacing-y;
+        }
+
+        .link {
+            padding: $base-spacing 0px $base-spacing $small-spacing;
+            color: $gray-200;
+            width: 100%;
+        }
+    }
+
+    .logout {
+        margin-top: auto;
+        width: 100%;
+        text-align: center;
+        padding: $base-spacing-y;
+        background-color: $error;
+        font-weight: $w-bold;
+        color: $gray-200;
+        cursor: pointer;
+    }
+}

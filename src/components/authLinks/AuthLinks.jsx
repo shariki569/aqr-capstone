@@ -20,17 +20,14 @@ const AuthLinks = () => {
     return (
         <>
             {status == "unauthenticated" ? (
-                <Link href="/dashboard/login" className={styles.link}>Login</Link>
+                <Link href="/login" className={styles.link}>Login</Link>
             ) : (
-                <>
-                <span>Hi, {session?.user.name}</span>
+                <div className={styles.links}>
+                <Link href="/dashboard" className={styles.link}>Dashboard</Link>
                 <span className={styles.link} onClick={signOut}>Logout</span>
-                </>
+                </div>
 
             )}
-
-
-
 
             <div className={`${styles.burger} ${open ? styles.cross : ''}`} onClick={toggleMenu}>
                 <div className={styles.bar}></div>

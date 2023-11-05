@@ -1,0 +1,24 @@
+@use "../../styles/utilities/" as *;
+
+.container {
+    padding: $large-spacing-y;
+    @include flexBoxRow(0rem, space-between, center);
+
+    
+    .button {
+        display: flex;
+        font-size: $f-medium;
+        padding: $base-spacing;
+        background: $primary;
+        color: $gray-200;
+        border-radius: $border-radius-small;
+        cursor: pointer;
+        border: none;
+
+        &:disabled{
+            background-color: $gray-600;
+            color: $gray-400;
+            cursor: not-allowed;
+        }
+    }
+}

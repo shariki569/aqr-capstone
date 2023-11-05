@@ -6,8 +6,9 @@ import logo from 'public/AquaLogo.svg'
 import Image from 'next/image'
 import { links } from './links'
 import AuthLinks from '@/components/authLinks/AuthLinks'
-const Navbar = () => {
 
+const Navbar = () => {
+    
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {

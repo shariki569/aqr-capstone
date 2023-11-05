@@ -1,0 +1,18 @@
+@use '../../styles/utilities/' as *;
+
+.container{
+    margin: $base-spacing-y;
+    // @include centerAndSet(1300px, 4rem);
+    .comment{
+        font-size: $f-medium;
+        font-weight: $w-bold;
+    }
+
+    .write{
+        @include flexBoxRow(1rem, flex-start, center);
+
+        .button{
+            width: 40px;
+        }
+    }
+}

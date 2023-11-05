@@ -12,7 +12,7 @@ export const  validateToken = async (token) => {
                 }
             })
 
-            return decodeToken
+            return decodedToken
     } catch (error) {
         throw new Error(err)
     }

@@ -15,13 +15,13 @@
         @include centerAndSet(1300px, 4rem);
 
         .facilityItems {
-            @include flexBoxRow(2rem, center, flex-start);
-            @include gridView(15rem, 1rem);
+            // @include flexBoxRow(2rem, center, flex-start);
+            @include gridView(15rem, 1rem, 1fr);
 
             .facilityItem {
                 @include flexBoxColumn(1rem, flex-start, center );
                 position: relative;
-                height: 70dvh;
+                // height: 70dvh;
                 .imageWrap {
                     position: relative;
                     height: 100%;

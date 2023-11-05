@@ -8,13 +8,15 @@ $secondary-font: 'Quicksand';
 //size
 
 $f-mobile: 0.7rem;
-
+$f-xsmall: 0.8rem;
 $f-small: 0.9rem;
 $f-medium: 1rem;
 $f-large: 1.5rem;;
 $f-xlarge: 2rem;
 $f-xxlarge: 2.5rem;
 $f-xxxlarge: 3rem;
+$f-xxxxlarge: 4rem;
+$f-xxxxxlarge: 5rem;
 //weights
 $w-light: 300;
 $w-normal: 400;
@@ -25,6 +27,11 @@ $w-bold: 700;
 
 
 //spacing
+$xsmall-spacing-y: 0.3rem 0;
+$xsmall-spacing: 0.3rem;
+$xsmall-spacing-x: 0rem 0.3rem;
+
+
 $small-spacing-y: 0.5rem 0;
 $small-spacing: 0.5rem;
 $small-spacing-x: 0rem 0.5rem;
@@ -51,7 +58,9 @@ $base-gap: 5rem;
 
 
 //border
-$border-radius: 0.5rem;
+$border-radius-small: 0.3rem;
+$border-radius-medium: 0.5rem;
+$border-radius-large: 1rem;
 
 $small-border-thickness: 0.5px solid;
 $base-border-thickness: 1px solid;

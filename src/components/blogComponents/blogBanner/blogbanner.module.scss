@@ -1,0 +1,38 @@
+@use "./../../../styles/utilities/" as *;
+
+.container {
+    background-color: $primary; 
+    height: 70dvh;
+    .wrapper {
+        @include flexBoxRow(0.3rem, center, center);
+        height: 100%;
+        @include centerAndSet(1300px, 4rem);
+        .heading{
+            @include flexBoxColumn(0.3rem, center, flex-start);
+            height: 100%;
+            width: 50%;
+
+            .title{
+                font-size: $f-xxxlarge;
+                color: $tertiary;
+                font-family: $primary-font;
+
+            }
+
+            .desc{
+                font-size: $f-large;
+                color: $gray-200;
+                text-transform: capitalize;
+            }
+            
+        }
+        .imageWrapper {
+            height: 300px;
+            width: 40%;
+
+            img {
+                @include fullSize;
+            }
+        }
+    }
+}

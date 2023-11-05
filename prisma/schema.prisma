@@ -44,14 +44,16 @@ model Session {
 model User {
   id            String    @id @default(cuid())
   name          String?
-  email         String?   @unique
+  email         String    @unique
   emailVerified DateTime?
   password      String?
-  image         String?
+  image         String?   @db.VarChar(255)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
   accounts      Account[]
   sessions      Session[]
+  post          Post[]
+  comment       Comment[]
 }
 
 model VerificationRequest {
@@ -65,64 +67,60 @@ model VerificationRequest {
   @@unique([identifier, token])
 }
 
-// // model Account {
-// //   id                String  @id @default(cuid())
-// //   userId            String
-// //   type              String
-// //   provider          String
-// //   providerAccountId String
-// //   refresh_token     String?
-// //   access_token      String?
-// //   expires_at        Int?
-// //   token_type        String?
-// //   scope             String?
-// //   id_token          String?
-// //   session_state     String?
-
-// //   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-// //   @@unique([provider, providerAccountId])
-// //   @@index([userId])
-// // }
-
-// // model Session {
-// //   id           String   @id @default(cuid())
-// //   sessionToken String   @unique
-// //   userId       String
-// //   expires      DateTime
-// //   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-// //   @@index([userId])
-// // }
-
-// model User {
-//   id        String              @id @default(cuid())
-//   username  String?             @unique
-//   email     String              @unique
-//   // emailVerified DateTime?
-//   image     String?
-//   password  String?
-//   createdAt DateTime            @default(now())
-//   token     AuthToken[]
-//   // accounts      Account[]
-//   // sessions      Session[]
-// }
-
-// model AuthToken {
-//   id        String   @id @default(cuid())
-//   token     String   @unique
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime @updatedAt
-//   userId    String
-//   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-//   @@index([userId], map: "authToken_UserId_Fkey")
-// }
-
-model Facilities {
-  Fac_Id    String @id @default(cuid())
-  Fac_Slug  String @unique
-  Fac_Desc  String
-  Fac_Title String
-  Fac_Image String
+model Category {
+  CatId    String  @id @default(cuid())
+  CatSlug  String  @unique
+  CatTitle String
+  CatImg   String?
+  posts    Post[]
 }
+
+model Post {
+  PostId    String    @id @default(cuid())
+  PostSlug  String    @unique
+  CreatedAt DateTime  @default(now())
+  PostTitle String
+  PostDesc  String    @db.Text
+  PostImg   String?
+  Views     Int       @default(0)
+  catSlug   String
+  userEmail String
+  postCat   Category  @relation(fields: [catSlug], references: [CatSlug])
+  user      User      @relation(fields: [userEmail], references: [email])
+  comments  Comment[]
+
+  @@index([catSlug])
+  @@index([userEmail])
+}
+
+model Comment {
+  CommentId   String   @id @default(cuid())
+  CreatedAt   DateTime @default(now())
+  CommentDesc String
+  userEmail   String
+  user        User     @relation(fields: [userEmail], references: [email])
+  postSlug    String
+  post        Post     @relation(fields: [postSlug], references: [PostSlug])
+
+  @@index([userEmail])
+  @@index([postSlug])
+}
+
+// model Facilities {
+//   Fac_Id        String     @id @default(cuid())
+//   Fac_Slug      String     @unique
+//   Fac_Desc      String
+//   Fac_Title     String
+//   Fac_Date      DateTime   @default(now())
+//   Images Facility[]
+// }
+
+// model FacilityImages {
+//   FacImg_Id   Int        @id
+//   fac_id      String
+//   FacImg_Name String
+//   Is_Featured Boolean  
+//   facility    Facilities @relation(fields: [fac_id], references: [Fac_Id])
+
+//   @@index([fac_id] map: "fac_img_FKey")
+// }

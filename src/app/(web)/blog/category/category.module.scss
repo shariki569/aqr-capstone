@@ -1,0 +1,6 @@
+@use '../../../../styles/utilities/' as *;
+
+.container{
+    @include centerAndSet(1300px, 4rem);
+    width: 100%;
+}

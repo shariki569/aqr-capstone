@@ -1,0 +1,32 @@
+@use "../../styles/utilities/" as *;
+
+.container {
+    @include centerAndSet(1300px, 5rem);
+    width: 100%;
+    padding: $large-spacing-y;
+    .items {
+        @include centerAndSet(1300px, 4rem);
+       width: 100%;
+    
+        @include flexBoxRow(1rem, flex-start, center);
+    }
+
+    .title{
+        font-weight: $w-bold;
+        font-size: $f-large;
+        color: $gray-800;
+    }
+
+    .category{
+        @include cardContainer($border-radius-large);
+        padding: $small-spacing $large-spacing;
+        text-transform: capitalize;
+    }
+
+   
+}
+// @include devices(mobile) {
+//     .items {
+//         @include centerAndSet(200px, 1rem);
+//     }
+// }

@@ -1,0 +1,11 @@
+@use "../../../styles/utilities/" as *;
+
+.container {
+//    @include flexBoxRow(0.3rem, center, flex-start);
+   @include centerAndSet(1300px, 4rem);
+
+   width: 100%;
+    .categories {
+        width: 100%;
+    }
+}

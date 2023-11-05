@@ -1,0 +1,62 @@
+
+@use '../../styles/utilities/' as *;
+
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: $gray-200;
+  color: $gray-900;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.link-button-2 {
+  cursor: pointer;
+  color: $tertiary;
+  font-weight: $w-bold;
+  font-size: $f-medium;
+}
+
+.container{
+
+  min-height: 100vh;
+  margin:  0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+// .quill{
+//   width: 100%;
+// }
+
+.ql-bubble .ql-tooltip-editor input[type=text] {
+  left: 0;
+}
+.ql-bubble .ql-tooltip {
+  transform: translate(50px, 10px) !important;
+}
+
+
+.ql-toolbar{
+  z-index: 999;
+}

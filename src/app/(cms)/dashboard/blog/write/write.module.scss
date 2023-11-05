@@ -1,0 +1,62 @@
+@use "../../../../../styles/utilities/" as *;
+
+.container {
+    @include fullSize;
+    padding-inline: $large-spacing;
+    overflow-y: scroll;
+    padding-top: $large-spacing;
+
+    .wrapper {
+        @include flexBoxRow(0.3rem, center, center);
+
+        .input {
+            width: 100%;
+            max-width: 900px;
+            font-size: $f-xxlarge;
+            background-color: transparent;
+            border: none;
+        }
+
+        .publishButton {
+            display: flex;
+            padding-block: auto;
+        }
+    }
+    .editor {
+        @include flexBoxColumn(1rem, flex-start, flex-start);
+        text-align: center;
+        @include fullSize;
+    }
+
+    .buttons {
+        .button {
+            @include removeButtonStyles;
+            @include flexBoxRow(0.3rem, center, center);
+            color: $gray-800;
+            width: 100%;
+            margin-left: $small-spacing;
+            color: $primary;
+        }
+        .buttonWrap {
+            @include flexBoxRow(0.3rem, center, center);
+            .addButton {
+                @include removeButtonStyles;
+                border: 2px solid $primary;
+                border-radius: 50%;
+                color: $primary;
+                span{
+                    display: flex;
+                    padding: 0.3rem;
+                }
+            }
+        }
+        @include flexBoxRow(0.3rem, center, center);
+        text-align: center;
+    }
+
+    .textArea {
+        @include fullSize;
+        color: $gray-700;
+        font-family: inherit;
+    }
+}

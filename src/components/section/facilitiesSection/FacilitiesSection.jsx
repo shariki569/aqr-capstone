@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import HeaderSection from '../sectionWithHeader/HeaderSection'
 import styles from './facilitiesSection.module.scss'
-import React from 'react'
 import image from '../../../../public/HEADER-HOMEPAGE.webp'
 import Link from 'next/link'
 

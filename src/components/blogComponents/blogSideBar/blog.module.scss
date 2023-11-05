@@ -1,0 +1,49 @@
+@use "../../../styles/utilities/" as *;
+
+.sidebar {
+    flex: 6;
+    height: 100%;
+    font-size: $f-large;
+    padding: $large-spacing-y;
+    .posts {
+        margin: $small-spacing-y;
+    }
+    h5 {
+        margin-bottom: $base-spacing;
+    }
+
+    p {
+        font-size: $f-xsmall;
+    }
+
+    .sideTitle {
+        font-size: $f-medium;
+        line-height: 1.3rem;
+        padding-top: $xsmall-spacing;
+    }
+
+    .categoryBadge {
+        font-size: $f-xsmall;
+        @include flexBoxColumn(0.3rem, center, center);
+        border-radius: $border-radius-large;
+        text-align: center;
+        align-items: center;
+        padding-block: $xsmall-spacing;
+        padding-inline: $base-spacing;
+        background-color: $primary;
+        width: fit-content;
+        min-width: 40px;
+        max-width: 120px;
+        color: $gray-200;
+    }
+    .sideAuthor {
+        @include flexBoxRow(0.3rem, flex-start, center);
+        .sideName {
+            font-size: $f-small;
+        }
+
+        .sideDate {
+            font-size: $f-xsmall;
+        }
+    }
+}

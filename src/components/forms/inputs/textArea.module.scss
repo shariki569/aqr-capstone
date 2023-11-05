@@ -6,11 +6,17 @@
     .textArea {
         @include flexBoxColumn(0.3rem, center, flex-start);
         padding: $base-spacing-y;
+
         .textAreaInput {
+            width: 100%;
+            // textarea{
+            //     width: 100%;
+            // }
+
             resize: none;
             padding: $small-spacing;
             border: $small-border-thickness $gray-200;
-            border-radius: $border-radius;
+            border-radius: $border-radius-small;
 
             &:hover {
                 outline: $small-border-thickness $gray-200;

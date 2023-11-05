@@ -11,11 +11,13 @@
     border: $base-border-thickness $primary;
     padding: $base-button-spacing;
     cursor: pointer;
-    border-radius: $border-radius;
+    border-radius: $border-radius-small;
     overflow: hidden;
     z-index: 99;
     transition: all 0.3s;
     width: 100%;
+    min-width: 20px;
+    max-width: 300px;
 
     &::before {
         content: "";

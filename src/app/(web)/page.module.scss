@@ -1,0 +1,60 @@
+@use "./../../styles/utilities/" as *;
+
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .imageContainer {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @include backgroundColorOpacity ($gray-900, 0.6, multiply);
+    }
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .item{
+    width: 100%;
+  }
+
+ 
+}
+
+.title {
+  font-family: $primary-font;
+  font-size: $f-xxxlarge;
+  font-weight: $w-light;
+ 
+}
+
+.item {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+@include devices ("mobile") {
+  .title {
+    font-size: $f-xlarge;
+  }
+}

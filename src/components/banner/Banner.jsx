@@ -4,7 +4,7 @@ import styles from './banner.module.scss'
 const Banner = ({ image, title, position = 'center', size = 'large'}) => {
 
     const containerSize = `${styles.container} ${styles[size]}`
-    const fontSize = `${styles.title} ${styles[size]}`
+
 
     return (
         <div className={containerSize}>

@@ -19,6 +19,8 @@
             .description{
                min-height: 50dvh;
                border-bottom: solid 0.1rem $gray-700;
+               margin: $large-spacing-y;
+             
             }
             .header {
                 font-size: $f-medium;
@@ -26,81 +28,15 @@
                 margin: $base-spacing-y;
                 .title {
                     @include flexBoxRow(0.3rem, space-between, center);
-                    padding: $small-spacing-y;
+                    padding: $small-spacing 0 $large-spacing 0;
                     color: $gray-900;
                     text-transform: capitalize;
-                    span {
-                        @include flexBoxRow(0.3rem, center, center);
-                        p {
-                            display: flex;
-                            padding: $small-spacing;
-                            border-radius: $border-radius-large;
-                        }
-                        .twitter {
-                            background-color: rgb(15, 15, 15);
-                            color: $gray-200;
-                        }
-                        .facebook {
-                            background-color: blue;
-                            color: $gray-200;
-                        }
-                        .instagram {
-                            color: $gray-200;
-                            background: -webkit-radial-gradient(
-                                    32% 106%,
-                                    circle cover,
-                                    rgb(255, 225, 125) 0%,
-                                    rgb(255, 205, 105) 10%,
-                                    rgb(250, 145, 55) 28%,
-                                    rgb(235, 65, 65) 42%,
-                                    transparent 82%
-                                ),
-                                -webkit-linear-gradient(-45deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
-                            background: -moz-radial-gradient(
-                                    32% 106%,
-                                    circle cover,
-                                    rgb(255, 225, 125) 0%,
-                                    rgb(255, 205, 105) 10%,
-                                    rgb(250, 145, 55) 28%,
-                                    rgb(235, 65, 65) 42%,
-                                    transparent 82%
-                                ),
-                                -moz-linear-gradient(-45deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
-                            background: -ms-radial-gradient(
-                                    32% 106%,
-                                    circle cover,
-                                    rgb(255, 225, 125) 0%,
-                                    rgb(255, 205, 105) 10%,
-                                    rgb(250, 145, 55) 28%,
-                                    rgb(235, 65, 65) 42%,
-                                    transparent 82%
-                                ),
-                                -ms-linear-gradient(-45deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
-                            background: -o-radial-gradient(
-                                    32% 106%,
-                                    circle cover,
-                                    rgb(255, 225, 125) 0%,
-                                    rgb(255, 205, 105) 10%,
-                                    rgb(250, 145, 55) 28%,
-                                    rgb(235, 65, 65) 42%,
-                                    transparent 82%
-                                ),
-                                -o-linear-gradient(-45deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
-                            background: radial-gradient(
-                                    circle farthest-corner at 32% 106%,
-                                    rgb(255, 225, 125) 0%,
-                                    rgb(255, 205, 105) 10%,
-                                    rgb(250, 145, 55) 28%,
-                                    rgb(235, 65, 65) 42%,
-                                    transparent 82%
-                                ),
-                                linear-gradient(135deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
-                        }
-                    }
+                   
                 }
                 .author {
                     @include flexBoxRow(0.5rem, flex-start, center);
                     text-align: center;
+                    font-weight: $w-normal;
                     .imageProfile {
                         border-radius: 50%;
                         display: flex;

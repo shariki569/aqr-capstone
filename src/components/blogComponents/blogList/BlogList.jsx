@@ -13,6 +13,7 @@ const getData = async (page, cat) => {
     return res.json()
 }
 
+
 const BlogList = async ({ page, cat }) => {
 
     const { posts, count } = await getData(page, cat)

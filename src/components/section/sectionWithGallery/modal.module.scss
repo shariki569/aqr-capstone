@@ -1,3 +1,77 @@
-@use '../../../styles/utilities/' as *;
+@use "../../../styles/utilities/" as *;
 
+.modal {
+    z-index: 23;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #16161670;
+    @include flexBoxRow(0rem, center, center);
+    // .overlay {
+    //     position: relative;
+    //     .image {
+    //         top: 50%;
+    //         left: 50%;
+    //         transform: translate(50%, -50%);
+    //     }
+    // }
+    // .imageGallery{
+    //    display: none;
+    // }
+    .closeButton {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        background-color: transparent;
+        font-size: $f-xlarge;
+        color: $gray-100;
+        border: none;
+        cursor: pointer;
+    }
+    .image {
+        object-fit: contain;
+        height: 700px;
+        width: 700px;
+        display: none;
+    }
 
+    .image.active {
+        display: block;
+    }
+
+    .arrowLeft {
+        position: absolute;
+        color: $gray-100;
+        cursor: pointer;
+        left: 5%;
+        background-color: $gray-800;
+        padding: $base-spacing;
+        transition: 0.3s ease-in-out;
+        border-radius: 10%;
+        display: flex;
+        &:hover {
+            background-color: $gray-100;
+            color: $gray-800;
+            transform: translateX(-5px);
+            border-radius: 50%;
+        }
+    }
+    .arrowRight {
+        display: flex;
+        position: absolute;
+        cursor: pointer;
+        color: $gray-100;
+        right: 5%;
+        background-color: $gray-800;
+        padding: $base-spacing;
+        transition: 0.3s ease-in-out;
+        &:hover {
+            background-color: $gray-100;
+            color: $gray-800;
+            transform: translateX(5px);
+            border-radius: 50%;
+        }
+    }
+}

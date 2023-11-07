@@ -4,6 +4,9 @@ import Image from 'next/image'
 import BlogSideBar from '@/components/blogComponents/blogSideBar/BlogSideBar'
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import Comments from '@/components/comments/Comments';
+import ShareButtons from '@/components/social-media-share/ShareButtons';
+
+
 
 const getData = async (slug) => {
   const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
@@ -16,6 +19,25 @@ const getData = async (slug) => {
 
   return res.json();
 };
+
+
+export async function generateMetadata({params}) {
+  
+  const { slug } = params
+  const data = await getData(slug)
+  return {
+    title: data?.PostTitle,
+    description: data?.PostDesc,
+    openGraph: {
+      title: data?.PostTitle,
+      description: data?.PostDesc,
+    },
+
+    alternates: {
+      canonical: `/blog/${data?.postSlug}`
+    }
+  }
+}
 
 const BlogPostSingle = async ({ params }) => {
   const { slug } = params
@@ -31,11 +53,7 @@ const BlogPostSingle = async ({ params }) => {
             <div className={style.header}>
               <div className={style.title}>
                 <h1>{data?.PostTitle}</h1>
-                <span>
-                  <p className={style.twitter}><FaXTwitter /></p>
-                  <p className={style.facebook}> <FaFacebookF /></p>
-                  <p className={style.instagram}> <FaInstagram /></p>
-                </span>
+                <ShareButtons/>
               </div>
               <div className={style.author}>
                 {data.user?.name &&
@@ -44,7 +62,10 @@ const BlogPostSingle = async ({ params }) => {
                   </div>
                 }
                 <div>
-                  <span>{data?.user.name}</span>
+                  <p>Author: <span className={style.name}> {data?.user.name}</span></p> 
+                </div>
+                <div>
+                  Posted On: <span>{data?.CreatedAt.substring(0, 10)} </span>
                 </div>
               </div>
             </div>

@@ -8,7 +8,8 @@ const nextConfig = {
       "res.cloudinary.com",
       "images.pexels.com",
       "resortcainta.netlify.app",
-      "scontent.fceb3-1.fna.fbcdn.net"
+      "scontent.fceb3-1.fna.fbcdn.net",
+      "firebasestorage.googleapis.com"
     ],
   },
   reactStrictMode: true,

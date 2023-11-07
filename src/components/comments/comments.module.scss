@@ -3,11 +3,30 @@
 .container{
     margin: $base-spacing-y;
     // @include centerAndSet(1300px, 4rem);
-    .comment{
+    color: $gray-800;
+    .title{
         font-size: $f-medium;
         font-weight: $w-bold;
     }
 
+    .image{
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .name{
+        font-weight: $w-bold;
+    }
+
+    .userGroup{
+        @include flexBoxRow(1rem, flex-start, center);
+        padding: $base-spacing-y;
+
+        .userInfo{
+            @include flexBoxColumn(0.2rem, center, flex-start);
+        }
+    }
+    
     .write{
         @include flexBoxRow(1rem, flex-start, center);
 

@@ -1,37 +1,62 @@
-@use '../../../styles/utilities/' as *;
+@use "../../../styles/utilities/" as *;
 
-.container{
+.container {
     @include centerAndSet(1300px, 5rem);
-    @include flexBoxColumn(0.3rem, center, center);
+    @include flexBoxRow(1rem, center, center);
     width: 100%;
+    margin: $large-spacing-y;
+    &:nth-child(2n+1) {
+        flex-direction: row-reverse;
+    }
 
-    .wrapper{
-        width: 100%;
-        margin: $large-spacing-y;
-        .imageWrap{
-            position: relative;
-            width: 50%;
-            height: 300px;
-            img{
-                position: relative;
+    .content {
+        @include flexBoxColumn(1rem, center, center);
+        width: 50%;
+        .title {
+            h1 {
+                font-family: $primary-font;
+                font-size: $f-xxlarge;
+                font-weight: $w-bold;
                 width: 100%;
-                height: 100%;
-                object-fit: cover;
-                // @include fullSize;
-            }
-            .btn{
-                position: absolute;
-                top: 5%;
-                right: 2%;
-            }
-        }
-        @include flexBoxRow(0rem, center, center);
+                color: $primary;
 
-        &:nth-child(2n){
-            flex-direction: row-reverse;
+                &::after {
+                    display: block;
+                    margin: 0 auto;
+                    content: "";
+                    width: 40px;
+                    height: 3px;
+                    background-color: $tertiary;
+                }
+            }
         }
-        .content{
-            width: 50%;
+    }
+    .imageWrap {
+        position: relative;
+        width: 50%;
+        height: 300px;
+        border-radius: $border-radius-medium;
+        overflow: hidden;
+
+        .img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            // @include fullSize;
+        }
+        .btn {
+            position: absolute;
+            display: flex;
+            gap: 0.5rem;
+            top: 5%;
+            right: 2%;
+            @include removeButtonStyles;
+            color: $gray-200;
+            background-color: $tertiary;
+            padding: $small-spacing $base-spacing;
+            border-radius: $border-radius-large;
+            font-weight: $w-semibold;
         }
     }
 }

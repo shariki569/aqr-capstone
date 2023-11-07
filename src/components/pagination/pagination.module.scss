@@ -1,7 +1,7 @@
 @use "../../styles/utilities/" as *;
 
 .container {
-    padding: $large-spacing-y;
+    padding: $medium-spacing-y;
     @include flexBoxRow(0rem, space-between, center);
 
     

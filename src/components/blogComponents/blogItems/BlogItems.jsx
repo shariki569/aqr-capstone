@@ -23,7 +23,7 @@ const BlogItems = ({ itemKey, item }) => {
                     <h3 className={style.title}>{item.PostTitle}</h3>
                 </Link>
                 <p className={style.author}>{item?.user.name}<span>{item.CreatedAt.substring(0, 10)}</span></p>
-                <p className={style.desc}>{item.PostDesc}</p>
+                <p className={style.desc} dangerouslySetInnerHTML={{__html: item.PostDesc}}/>
             </div>
         </div>
     )

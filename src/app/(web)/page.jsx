@@ -10,9 +10,13 @@ import home4 from 'public/homeImages/home4.webp'
 import home5 from 'public/homeImages/home5.webp'
 import home6 from 'public/homeImages/home6.webp'
 import FacilitiesSection from '@/components/section/facilitiesSection/FacilitiesSection'
+
+
+
+
+
+
 export default function Home() {
-
-
 
   return (
     <>

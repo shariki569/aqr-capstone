@@ -47,7 +47,7 @@ model User {
   email         String    @unique
   emailVerified DateTime?
   password      String?
-  image         String?   @db.VarChar(255)
+  image         String?   @db.VarChar(355)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
   accounts      Account[]
@@ -79,7 +79,7 @@ model Post {
   PostId    String    @id @default(cuid())
   PostSlug  String    @unique
   CreatedAt DateTime  @default(now())
-  PostTitle String
+  PostTitle String    @db.VarChar(455)
   PostDesc  String    @db.Text
   PostImg   String?
   Views     Int       @default(0)
@@ -106,13 +106,21 @@ model Comment {
   @@index([postSlug])
 }
 
+model Contact {
+  Contact_Id         Int    @id @default(autoincrement())
+  Contact_Address   String @db.VarChar(255)
+  Contact_Email     String @db.VarChar(144)
+  Contact_Telphone  String
+  Contact_Cellphone String
+}
+
 // model Facilities {
 //   Fac_Id        String     @id @default(cuid())
 //   Fac_Slug      String     @unique
 //   Fac_Desc      String
 //   Fac_Title     String
 //   Fac_Date      DateTime   @default(now())
-//   Images Facility[]
+//   Images FacilityImages[]
 // }
 
 // model FacilityImages {

@@ -11,7 +11,7 @@
 
         .input {
             width: 100%;
-            max-width: 900px;
+            // max-width: 900px;
             font-size: $f-xxlarge;
             background-color: transparent;
             border: none;
@@ -36,6 +36,7 @@
             width: 100%;
             margin-left: $small-spacing;
             color: $primary;
+     
         }
         .buttonWrap {
             @include flexBoxRow(0.3rem, center, center);
@@ -44,7 +45,9 @@
                 border: 2px solid $primary;
                 border-radius: 50%;
                 color: $primary;
+               
                 span{
+                    cursor: pointer;
                     display: flex;
                     padding: 0.3rem;
                 }

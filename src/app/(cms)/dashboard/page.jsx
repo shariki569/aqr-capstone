@@ -7,8 +7,8 @@ import AdminNavbar from '@/components/common/adminNavbar/AdminNavbar';
 
 const Dashboard = () => {
 
-  const { data: session, status } = useSession();
-  const loading = status === "loading";
+  const { data: session} = useSession();
+  // const loading = status === "loading";
   const router = useRouter();
 
   useEffect(() => {

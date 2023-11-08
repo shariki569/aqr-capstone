@@ -3,7 +3,7 @@ import style from './blog.module.scss'
 const BlogSideBar = () => {
     return (
         <div className={style.sidebar}>
-            <p>What's New?</p>
+            <p>What&apos;s New?</p>
             <h5>Most Popular</h5>
             <div className={style.posts}>
                 <div className={style.categoryBadge}>

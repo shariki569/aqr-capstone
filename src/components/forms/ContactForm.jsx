@@ -112,7 +112,7 @@ const ContactForm = () => {
 
                     {contactDetails.loading ? (
                         <button className={styles.btn} disabled>
-                            Sending <DotLoader color="#36d7b7" size={15} />
+                            Sending 
                         </button>
                     ) : (
                         <button type="submit" className={styles.btn}>
@@ -122,7 +122,7 @@ const ContactForm = () => {
                 </form>
             </div>
         </div>
-
+        // <DotLoader color="#36d7b7" size={15} />
     )
 }
 

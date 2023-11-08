@@ -18,7 +18,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/auth/register`, {
+      const res = await fetch(`${process.env.APP_URL}/api/auth/register`, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"

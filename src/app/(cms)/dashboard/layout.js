@@ -6,8 +6,8 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import AdminNavbar from "@/components/common/adminNavbar/AdminNavbar";
 export default function DashboardLayout({ children }) {
-  const { data: session } = useSession();
-  // const loading = status === "loading";
+  const { data: session, status } = useSession();
+  const loading = status === "loading";
   const router = useRouter();
 
   useEffect(() => {

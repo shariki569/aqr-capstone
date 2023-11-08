@@ -24,7 +24,7 @@ const AdminSideBar = () => {
                 {status === "authenticated" && (
                     <h3>{session?.user.name}</h3>
                 )}
-                <ul classname={styles.items}>
+                <ul className={styles.items}>
                     {dashLinks.map((links, index) => (
                         <li key={index} className={styles.link}>
                             <AdminLinks links={links}/>

@@ -85,7 +85,7 @@ const AddBlog = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            await axios.post(`${process.env.NEXTAUTH_URL}/api/posts`, {
+            await axios.post(`${process.env.APP_URL}/api/posts`, {
                 PostTitle: title,
                 PostDesc: desc,
                 PostImg: media,

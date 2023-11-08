@@ -24,7 +24,7 @@ const Contact = () => {
 
 
   return (
-    <>
+    <div className={styles.contactUs}>
       <Banner title="Contact Us" image={bannerImg} position='bottom'/>
       <div className={styles.container}>
         <div className={styles.item}>
@@ -34,7 +34,7 @@ const Contact = () => {
           <ContactForm/>
         </div>
       </div>
-    </>
+    </div>
 
   )
 }

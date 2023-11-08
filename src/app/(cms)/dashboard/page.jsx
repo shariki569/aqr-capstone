@@ -17,9 +17,9 @@ const Dashboard = () => {
     }
   }, [session,  router]);
 
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className={styles.container}>
       Dashboard

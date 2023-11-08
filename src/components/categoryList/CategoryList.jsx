@@ -3,7 +3,7 @@ import Link from 'next/link'
 import style from './categoryList.module.scss'
 
 async function getData() {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/categories`, {
+    const res = await fetch(`${process.env.APP_URL}/api/categories`, {
         cache: "no-store",
     })
     if (!res.ok) {
@@ -27,7 +27,6 @@ const CategoryList = async () => {
                         </Link>
                     ))}
                 </div>
-
             </div>
         </div>
     )

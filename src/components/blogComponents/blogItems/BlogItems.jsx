@@ -12,7 +12,6 @@ import Link from 'next/link'
 // }
 const BlogItems = ({ itemKey, item }) => {
     return (
-
         <div className={style.item} key={itemKey}>
             <div className={style.image}>
                 <Image style={{ objectFit: 'cover' }} src={item.PostImg} width={120} height={120} alt="image" />

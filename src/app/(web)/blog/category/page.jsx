@@ -31,9 +31,10 @@ export async function generateMetadata({ searchParams }) {
 
     const { cat } = searchParams
     let title = `${cat.charAt(0).toUpperCase()}${cat.slice(1)}`
-   
+
 
     return {
+        metadataBase: new URL(`http://localhost:3000`),
         title: `${title} Category`,
         description: `Browse our ${cat} collection. Our selection offers a variety of options. Visit aquacaintaresort.com to learn more.`,
         alternates: {

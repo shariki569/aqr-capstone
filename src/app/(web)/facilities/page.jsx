@@ -7,11 +7,8 @@ import { facilitiesData } from '@/components/section/facilitiesSection/facilitie
 const Facilities = () => {
 
 
-
-
-
   return (
-    <>
+    <div className={styles.facility}>
       <Banner title="Facilities" image='https://resortcainta.netlify.app/upload/1697611859676heeeeee.jpg' />
       <div className={styles.container}>
         <HeaderSection
@@ -31,7 +28,7 @@ const Facilities = () => {
   
 
       </div>
-    </>
+    </div>
   )
 }
 

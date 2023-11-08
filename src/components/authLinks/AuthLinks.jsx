@@ -18,7 +18,7 @@ const AuthLinks = () => {
 
     console.log(session)
     return (
-        <>
+        <div className={styles.auth}>
             {status == "unauthenticated" ? (
                 <Link href="/login" className={styles.link}>Login</Link>
             ) : (
@@ -43,7 +43,7 @@ const AuthLinks = () => {
                     </div>
                 </div>
             )}
-        </>
+        </div>
     )
 }
 

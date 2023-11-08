@@ -10,7 +10,7 @@ import Button from '@/components/button/Button'
 // import { fetchData } from 'next-auth/client/_utils'
 
 const getData = async (page) => {
-    const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, { cache: "no-store", })
+    const res = await fetch(`${process.env.URL}/api/posts?page=${page}`, { cache: "no-store", })
 
     if (!res.ok) {
         throw new Error("Failed to fetch data")

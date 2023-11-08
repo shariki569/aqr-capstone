@@ -9,7 +9,7 @@ import ShareButtons from '@/components/social-media-share/ShareButtons';
 
 
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+  const res = await fetch(`${process.env.URL}api/posts/${slug}`, {
     cache: "no-store",
   });
 
@@ -44,7 +44,7 @@ const BlogPostSingle = async ({ params }) => {
   const data = await getData(slug)
 
   return (
-    <>
+    <div className={style.singlePage}>
       < Banner image="https://resortcainta.netlify.app/upload/1697611859676heeeeee.jpg" size='small' />
       <div className={style.container}>
         <div className={style.wrapper}>
@@ -79,7 +79,7 @@ const BlogPostSingle = async ({ params }) => {
           <BlogSideBar />
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

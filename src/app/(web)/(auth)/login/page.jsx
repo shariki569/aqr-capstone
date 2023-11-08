@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import styles from './login.module.scss'
 import TextInput from '@/components/forms/inputs/TextInput'
 import Button from '@/components/button/Button'
-import { signIn, useSession, getProviders } from 'next-auth/react'
+import { signIn } from 'next-auth/react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
@@ -49,9 +49,9 @@ const Login = () => {
             <Link href='/register'>Register</Link>
           </div>
         </div>
-        <div className={styles.socialLogin}>
+        {/* <div className={styles.socialLogin}>
           <div className={styles.socialItems} onClick={() => signIn('google')}>Sign in with Google</div>
-        </div>
+        </div> */}
       </div>
     </div>
 

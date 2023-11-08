@@ -1,10 +1,10 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import styles from './write.module.scss'
 import TextInput from '@/components/forms/inputs/TextInput'
 import { BiImageAdd, BiImport, BiPlusCircle, BiVideoPlus } from 'react-icons/bi'
-import ReactQuill from 'react-quill'
+
 import 'react-quill/dist/quill.bubble.css'
 import Button from '@/components/button/Button'
 import { useSession } from 'next-auth/react'
@@ -12,12 +12,14 @@ import { useRouter } from 'next/navigation'
 import { getDownloadURL, getStorage, ref, uploadBytesResumable, uploadString } from "firebase/storage";
 import { app } from '@/utilities/firebase'
 import axios from 'axios'
+import dynamic from 'next/dynamic'
 
 
 
 const storage = getStorage(app);
 
 const AddBlog = () => {
+    const ReactQuill = useMemo(() => dynamic(() => import('react-quill'), {ssr: false}), []);
     const { status } = useSession()
     const router = useRouter();
     const [file, setFile] = useState(null);
@@ -85,7 +87,7 @@ const AddBlog = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            await axios.post('/api/posts', {
+            await axios.post(`${process.env.URL}/api/posts`, {
                 PostTitle: title,
                 PostDesc: desc,
                 PostImg: media,

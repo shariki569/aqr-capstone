@@ -26,14 +26,14 @@ const Blog = ({ searchParams }) => {
   const page = parseInt(searchParams.page) || 1;
 
   return (
-    <>
+    <div className={styles.blog}>
       <BlogBanner title='Our Blog' subHeading='Discover the latest news and insights'/>
       <CategoryList />
       <div className={styles.container}>
         <BlogList page={page} />
         <BlogSideBar/>
       </div>
-    </>
+    </div>
   )
 }
 

@@ -9,7 +9,7 @@ import ShareButtons from '@/components/social-media-share/ShareButtons';
 
 
 const getData = async (slug) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts/${slug}`, {
+  const res = await fetch(`${process.env.APP_URL}/api/posts/${slug}`, {
     cache: "no-store",
   });
 

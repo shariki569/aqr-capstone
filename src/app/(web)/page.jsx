@@ -13,13 +13,10 @@ import FacilitiesSection from '@/components/section/facilitiesSection/Facilities
 
 
 
-
-
-
 export default function Home() {
 
   return (
-    <>
+    <div className={styles.home}>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
           <Image src={HeroBanner} alt="Hero Banner" className={styles.img} />
@@ -67,7 +64,7 @@ export default function Home() {
           }
         />
       </div>
-    </>
+    </div>
 
   )
 }

@@ -5,6 +5,7 @@ import Footer from "@/components/common/footer/Footer";
 import AuthProvider from "@/providers/AuthProvider";
 
 export const metadata = {
+  metadataBase: new URL(`${process.env.APP_URL}`),
   title: {
     default: "Aqua Cainta: Your Relaxing Getaway in Talisay, Cebu City",
     template: "%s | Aqua Cainta",

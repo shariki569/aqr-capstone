@@ -15,7 +15,7 @@ const BlogItems = ({ itemKey, item }) => {
 
         <div className={style.item} key={itemKey}>
             <div className={style.image}>
-                <img style={{ objectFit: 'cover' }} src={item.PostImg} width={120} height={120} alt="image" />
+                <Image style={{ objectFit: 'cover' }} src={item.PostImg} width={120} height={120} alt="image" />
             </div>
             <div className={style.content}>
                 <span className={style.category}>{item.catSlug}</span>

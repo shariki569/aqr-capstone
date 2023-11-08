@@ -49,13 +49,13 @@ const Category = ({ searchParams }) => {
     const page = parseInt(searchParams.page) || 1;
     const { cat } = searchParams;
     return (
-        <>
+        <div className={style.category}>
             <BlogBanner title='Categories' subHeading={cat} />
             <CategoryList />
             <div className={style.container}>
                 <BlogList page={page} cat={cat} />
             </div>
-        </>
+        </div>
     )
 }
 

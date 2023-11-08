@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import styles from './dashboard.module.scss'
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
+import AdminNavbar from '@/components/common/adminNavbar/AdminNavbar';
 
 const Dashboard = () => {
 
@@ -14,11 +15,11 @@ const Dashboard = () => {
     if (!loading && !session) {
       router.push("/login");
     }
-  }, [session, loading, router]);
+  }, [session,  router]);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
   return (
     <div className={styles.container}>
       Dashboard

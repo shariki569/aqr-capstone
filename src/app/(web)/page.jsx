@@ -56,6 +56,16 @@ export default function Home() {
           }
         />
         <FacilitiesSection/>
+        <TwoSection
+          inverse
+          title="Safety First"
+          content="In our resort, your well-being is our top priority. Our dedicated team of lifeguards and a registered nurse are always on standby to ensure your safety. Rest easy, knowing you're in capable hands."
+          images={
+            [
+              home5
+            ]
+          }
+        />
       </div>
     </>
 

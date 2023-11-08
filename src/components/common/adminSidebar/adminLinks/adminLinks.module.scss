@@ -4,5 +4,13 @@
 .container{
     width: 100%;
     color: $gray-300;
-   
+    display: flex;
+    padding: $base-spacing $base-spacing;
+    &:hover {
+        background-color: $primary-hover;
+    }
+
+    &.active{
+        background-color: $primary-hover;
+    }
 }

@@ -1,9 +1,10 @@
 "use client";
 import AdminSideBar from "@/components/common/adminSidebar/AdminSideBar";
-import styles from "./dashboard.module.scss";
+import styles from "./layout.module.scss";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import AdminNavbar from "@/components/common/adminNavbar/AdminNavbar";
 export default function DashboardLayout({ children }) {
   const { data: session, status } = useSession();
   const loading = status === "loading";
@@ -13,16 +14,22 @@ export default function DashboardLayout({ children }) {
     if (!loading && !session) {
       router.push("/login");
     }
-  }, [session, loading, router]);
+  }, [session, router]);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <div className={styles.container}>
-      <AdminSideBar />
-      {children}
+      <div className={styles.menu}>
+        <AdminSideBar />
+      </div>
+
+      <div className={styles.wrapper}>
+        <AdminNavbar />
+        {children}
+      </div>
     </div>
   );
 }

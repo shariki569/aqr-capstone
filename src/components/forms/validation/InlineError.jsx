@@ -1,4 +1,4 @@
-import styles from './InlineError.module.scss'
+import styles from './inlineError.module.scss'
 
 const InlineError = (error) => {
   return (

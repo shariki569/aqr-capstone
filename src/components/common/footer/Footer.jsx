@@ -90,11 +90,6 @@ const Footer = async () => {
         <div className={styles.footerItems}>
           <div className={styles.footerTitle}>
             <h3>SHARE US ON</h3>
-            <span>
-              <p className={styles.twitter}><FaXTwitter /></p>
-              <p className={styles.facebook}> <FaFacebookF /></p>
-              <p className={styles.instagram}> <FaInstagram /></p>
-            </span>
             <ShareButtons />
           </div>
         </div>

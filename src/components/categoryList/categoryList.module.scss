@@ -6,24 +6,66 @@
     padding: $large-spacing-y;
     .items {
         @include centerAndSet(1300px, 4rem);
-       width: 100%;
-    
+        width: 100%;
+        height: 100%;
         @include flexBoxRow(1rem, flex-start, center);
+        flex-wrap: wrap;
+
+        .linkTitle{
+            @include flexBoxRow(1rem, flex-start, center);
+        }
     }
 
-    .title{
+    .title {
         font-weight: $w-bold;
         font-size: $f-large;
         color: $gray-800;
     }
 
-    .category{
+    .category {
         @include cardContainer($border-radius-large);
         padding: $small-spacing $large-spacing;
         text-transform: capitalize;
     }
 
-   
+    @include devices(tablet) {
+        .title {
+            font-size: $f-medium;
+            height: 100%;
+        }
+        .category {
+            padding: $small-spacing $medium-spacing;
+            text-transform: capitalize;
+            font-size: $f-small;
+        }
+        .linkTitle {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .items {
+            @include centerAndSet(700px, 1rem);
+        }
+    }
+
+    @include devices(mobile) {
+        .title {
+            font-size: $f-medium;
+            height: 100%;
+        }
+        .category {
+            padding: $small-spacing $medium-spacing;
+            font-size: $f-small;
+        }
+        .linkTitle {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .items {
+            @include centerAndSet(300px, 1rem);
+        }
+    }
 }
 // @include devices(mobile) {
 //     .items {

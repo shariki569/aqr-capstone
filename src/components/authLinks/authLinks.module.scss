@@ -121,3 +121,22 @@
         display: none;
     }
 }
+@include devices("tablet") {
+    .responsiveMenu {
+        display: block;
+
+        .links {
+            height: 100%;
+            width: 100%;
+            @include flexBoxColumn(0.5rem, center, center);
+        }
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .link {
+        display: none;
+    }
+}

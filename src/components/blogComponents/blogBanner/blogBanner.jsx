@@ -12,7 +12,7 @@ const BlogBanner = ({title, subHeading}) => {
                     <p className={styles.desc}>{subHeading}</p>
                 </div>
                 <div className={styles.imageWrapper}>
-                    <Image src={blogimage} width={300} height={300} />
+                    <Image src={blogimage}/>
                 </div>
             </div>
         </div>

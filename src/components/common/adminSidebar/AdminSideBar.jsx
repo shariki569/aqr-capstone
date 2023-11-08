@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { signOut, useSession } from 'next-auth/react'
 import { dashLinks } from './dashboardLinks'
+import AdminLinks from './adminLinks/AdminLinks'
 
 const AdminSideBar = () => {
     const { data: session, status } = useSession();
@@ -23,11 +24,14 @@ const AdminSideBar = () => {
                 {status === "authenticated" && (
                     <h3>{session?.user.name}</h3>
                 )}
-                {dashLinks.map((links, index) => (
-                    <Link key={index} className={styles.link} href={links.path}>{links.title}</Link>
-                ))
-
-                }
+                <ul classname={styles.items}>
+                    {dashLinks.map((links, index) => (
+                        <li key={index} className={styles.link}>
+                            <AdminLinks links={links}/>
+                        </li>
+                        // <Link key={index} className={styles.link} href={links.path}>{links.title}</Link>
+                    ))}
+                </ul>
             </div>
             <div className={styles.logout} onClick={() => signOut()}>
                 Logout

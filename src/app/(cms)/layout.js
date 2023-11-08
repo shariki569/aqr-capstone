@@ -9,11 +9,11 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
 const quickSand = Quicksand({ subsets: ["latin"] });
-
+const inter = Inter({ subsets: ["latin"]})
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={quickSand.className}>
+      <body className={`${inter.className} ${styles.body}`}>
         <AuthProvider>
           <div className={styles.container}>{children}</div>
         </AuthProvider>

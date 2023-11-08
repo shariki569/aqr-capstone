@@ -1,10 +1,8 @@
-
-
 @use '../../../../styles/utilities/' as *;
 
 
 .container{
-    @include fullSize;
-    
-    overflow-y: scroll;
+    width: 100%;
+    color: $gray-300;
+   
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import style from './bloglist.module.scss'
 import BlogItems from '../blogItems/BlogItems'
 import Pagination from '@/components/pagination/Pagination'

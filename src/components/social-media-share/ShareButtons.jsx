@@ -3,7 +3,7 @@ import { FacebookShareButton, TwitterShareButton } from 'next-share'
 import React from 'react'
 import styles from './sharebuttons.module.scss';
 import { FaFacebookF, FaInstagram, FaXTwitter } from 'react-icons/fa6';
-// import Document from 'next/document';
+import Document from 'next/document';
 import { useRouter } from 'next/navigation';
 
 const ShareButtons = () => {

@@ -37,4 +37,19 @@
         margin: $base-spacing-y;
       
     }
+
+
+    @include devices(mobile) {
+      h2{
+        font-size: $f-xlarge;
+      }
+      p{
+        font-size: $f-small;
+        text-align: justify;
+        text-indent: $medium-spacing;
+      }
+      h4{
+        font-size: $f-medium;
+      }
+    }
 }

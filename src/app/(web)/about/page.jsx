@@ -5,9 +5,9 @@ import bannerImg from '@/../../public/aboutImages/about.webp'
 
 const About = () => {
   return (
-    <div className={styles.about}>
+    <>
       <Banner title="About Us" image={bannerImg} />
-      <div className={styles.container}>
+      <div className={styles.wrap}>
         <div className={styles.item}>
     
         </div>

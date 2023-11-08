@@ -3,20 +3,21 @@ import HeaderSection from '../sectionWithHeader/HeaderSection'
 import styles from './facilitiesSection.module.scss'
 import image from '../../../../public/HEADER-HOMEPAGE.webp'
 import Link from 'next/link'
+import { facilitiesData } from './facilitiesSectionData'
 
 
-async function getData() {
-    const res = await fetch('https://capston-aq-backend-production.up.railway.app/api/facilities', { next: { revalidate: 10 } })
-    if (!res.ok) {
-        throw new Error('Failed to fetch data')
-    }
-    return res.json()
-}
+// async function getData() {
+//     const res = await fetch('https://capston-aq-backend-production.up.railway.app/api/facilities', { next: { revalidate: 10 } })
+//     if (!res.ok) {
+//         throw new Error('Failed to fetch data')
+//     }
+//     return res.json()
+// }
 
 
 const FacilitiesSection = async () => {
 
-    const data = await getData();
+    // const data = await getData();
 
     return (
         <>
@@ -25,10 +26,10 @@ const FacilitiesSection = async () => {
 
                 <div className={styles.facilities}>
                     <div className={styles.facilityItems}>
-                        {data.map((facility) => (
+                        {facilitiesData.map((facility) => (
                             <div className={styles.facilityItem} key={facility.Fac_Id}>
                                 <div className={styles.imageWrap}>
-                                    <Image src={image} alt="Facility"></Image>
+                                    <Image className={styles.img} src={facility.Featured_Image} alt={facility.Fac_Title} width={400} height={400}></Image>
                                 </div>
                                 <div className={styles.content}>
                                     <h2>{facility.Fac_Title}</h2>

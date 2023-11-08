@@ -50,7 +50,7 @@ const ContactForm = () => {
                 message,
             };
 
-            const response = await axios.post(`https://capston-aq-backend-production.up.railway.app/api/emailRoute/send-email`, formData);
+            const response = await axios.post("/api/emailRoute/send-email", formData);
             if (response.status === 200) {
                 // Email sent successfully
                 alert("Email Sent Successfully");
@@ -123,7 +123,7 @@ const ContactForm = () => {
                 </form>
             </div>
         </div>
-
+        // <DotLoader color="#36d7b7" size={15} />
     )
 }
 

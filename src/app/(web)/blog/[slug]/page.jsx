@@ -27,7 +27,6 @@ export async function generateMetadata({params}) {
   const data = await getData(slug)
   return {
     title: data?.PostTitle,
-    description: data?.PostDesc,
     openGraph: {
       title: data?.PostTitle,
       description: data?.PostDesc,

@@ -1,16 +1,14 @@
 
-// import React, { useEffect, useState } from 'react'
 import Pagination from '@/components/pagination/Pagination'
 import styles from './blog.module.scss'
 import Image from 'next/image'
 
 import Link from 'next/link'
 import Button from '@/components/button/Button'
-// import axios from 'axios'
-// import { fetchData } from 'next-auth/client/_utils'
+
 
 const getData = async (page) => {
-    const res = await fetch(`${process.env.URL}/api/posts?page=${page}`, { cache: "no-store", })
+    const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, { cache: "no-store", })
 
     if (!res.ok) {
         throw new Error("Failed to fetch data")
@@ -32,7 +30,7 @@ const BlogDashboard = async ({ searchParams }) => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.buttonWrapper}>
+            <div className={styles.topHeader}>
                 <Link className={styles.link} href='/dashboard/blog/write'>Create Post</Link>
             </div>
             <table>
@@ -52,8 +50,9 @@ const BlogDashboard = async ({ searchParams }) => {
                             <td className={styles.center}><Image src={item.PostImg} alt={styles.title} height={70} width={70} /></td>
                             <td><p className={styles.desc} dangerouslySetInnerHTML={{ __html: (item.PostDesc) }} /></td>
                             <td className={styles.date}>{item.CreatedAt.substring(0, 10)}</td>
-                            <td>
-                                <Button text='Update'/>
+                            <td className={styles.buttonGroup}>
+                                <Button text='View'/>
+                                <Button text='delete'/>
                             </td>
                         </tr>
                     ))

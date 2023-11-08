@@ -4,7 +4,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import styles from './write.module.scss'
 import TextInput from '@/components/forms/inputs/TextInput'
 import { BiImageAdd, BiImport, BiPlusCircle, BiVideoPlus } from 'react-icons/bi'
-
+import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.bubble.css'
 import Button from '@/components/button/Button'
 import { useSession } from 'next-auth/react'
@@ -87,7 +87,7 @@ const AddBlog = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            await axios.post(`${process.env.URL}/api/posts`, {
+            await axios.post('/api/posts', {
                 PostTitle: title,
                 PostDesc: desc,
                 PostImg: media,

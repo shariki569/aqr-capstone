@@ -1,12 +1,15 @@
+
+
+
 export const dashLinks = [
     {
-
         title: 'Dashboard',
         path: '/dashboard',
     },
     {
         title: 'Blog',
         path: '/dashboard/blog',
+        icon: ''
     },
     {
 

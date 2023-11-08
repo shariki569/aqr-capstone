@@ -8,7 +8,7 @@ import { FaFacebookF, FaInstagram, FaXTwitter } from 'react-icons/fa6';
 import ShareButtons from '@/components/social-media-share/ShareButtons';
 
 async function getData() {
-  const res = await fetch(`http://localhost:3000/api/contact/1`)
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/contact/1`)
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 
@@ -90,11 +90,6 @@ const Footer = async () => {
         <div className={styles.footerItems}>
           <div className={styles.footerTitle}>
             <h3>SHARE US ON</h3>
-            <span>
-              <p className={styles.twitter}><FaXTwitter /></p>
-              <p className={styles.facebook}> <FaFacebookF /></p>
-              <p className={styles.instagram}> <FaInstagram /></p>
-            </span>
             <ShareButtons />
           </div>
         </div>

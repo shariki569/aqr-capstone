@@ -10,7 +10,7 @@
         width: 100%;
         min-width: 300px;
         max-width: 350px;
-        @include cardContainer($border-radius-medium);
+        @include cardContainer($border-radius);
         padding: $large-spacing;
     }
 

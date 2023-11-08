@@ -20,7 +20,7 @@ const Accommodations = async () => {
     const data = await getData()
 
     return (
-        <>
+        <div className={styles.accommodations}>
             <Banner title="Accommodation" image={image} position='center' />
             <div className={styles.container}>
                 <div className={styles.accommodation}>
@@ -47,7 +47,7 @@ const Accommodations = async () => {
 
             </div>
 
-        </>
+        </div>
 
     )
 }

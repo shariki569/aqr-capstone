@@ -1,11 +1,15 @@
 @use "../../../styles/utilities/" as *;
 
 .container {
+    min-height: 100vh;
     height: 100%;
     margin-right: auto;
     background-color: $primary;
-    width: 15%;
-    min-width: 15%;
+    // position: sticky;
+    // top: 0;
+    ul {
+        list-style: none;
+    }
     @include flexBoxColumn(0.3rem, center, center);
     .logo {
         height: 100px;
@@ -17,7 +21,7 @@
     }
     .links {
         width: 100%;
-        @include flexBoxColumn(0rem, center, flex-start);
+        // @include flexBoxColumn(0rem, center, flex-start);
         h3 {
             width: 100%;
             color: $gray-300;
@@ -26,14 +30,14 @@
         }
         .items {
             width: 100%;
-          
+            // padding: 59px;
+            padding-top: $base-spacing;
+            height: 100%;
+            list-style: none;
+
+           
             .link {
-                padding: $small-spacing $base-spacing;
                 width: 100%;
-                list-style: none;
-                &:hover {
-                    background-color: $primary-hover;
-                }
             }
         }
     }

@@ -1,10 +1,10 @@
 @use "../../../../styles/utilities/" as *;
 
 .container {
-    // @include fullSize;
+    background-color: $gray-100;
     min-height: 100%;
-    @include centerAndSet(1200px, 2rem);
-    // @include flexBoxColumn(0.3rem, center, space-between);
+    // @include centerAndSet(1200px, 2rem);
+
     font-size: $f-small;
     .topHeader {
         display: flex;
@@ -34,7 +34,7 @@
         width: 100%;
         border-collapse: collapse;
         border-radius: $border-radius-medium;
-        overflow: hidden;
+        // overflow: hidden;
         thead {
             background-color: $primary;
             color: $gray-200;

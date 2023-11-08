@@ -1,13 +1,11 @@
 
-// import React, { useEffect, useState } from 'react'
 import Pagination from '@/components/pagination/Pagination'
 import styles from './blog.module.scss'
 import Image from 'next/image'
 
 import Link from 'next/link'
 import Button from '@/components/button/Button'
-// import axios from 'axios'
-// import { fetchData } from 'next-auth/client/_utils'
+
 
 const getData = async (page) => {
     const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, { cache: "no-store", })

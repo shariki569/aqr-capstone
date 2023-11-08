@@ -1,0 +1,22 @@
+@use "../../../styles/utilities/" as *;
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: auto;
+  }
+  
+  .menu {
+    flex-shrink: 0;
+    height: 100%;
+    // Add your desired width for the sidebar
+    width: 200px;
+  }
+  
+  .wrapper {
+    flex-grow: 1;
+    min-height: 100vh;
+    overflow: auto;
+    padding: $small-spacing;
+  }
+  

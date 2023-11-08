@@ -9,7 +9,7 @@ import ShareButtons from '@/components/social-media-share/ShareButtons';
 
 
 const getData = async (slug) => {
-  const res = await fetch(`${process.env.APP_URL}/api/posts/${slug}`, {
+  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
     cache: "no-store",
   });
 
@@ -27,7 +27,6 @@ export async function generateMetadata({params}) {
   const data = await getData(slug)
   return {
     title: data?.PostTitle,
-    description: data?.PostDesc,
     openGraph: {
       title: data?.PostTitle,
       description: data?.PostDesc,

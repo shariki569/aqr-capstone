@@ -16,16 +16,17 @@ const CategoryList = async () => {
 
     const data = await getData();
 
-
     return (
         <div className={style.container} >
             <div className={style.items}>
                 <div className={style.title}>Categories:</div>
-                {data?.map((item) => (
-                    <Link className={`${style.item}`} key={item?.CatId} href={`/blog/category?cat=${item.CatSlug}`}>
-                        <span className={style.category}>{item?.CatTitle}</span>
-                    </Link>
-                ))}
+                <div className={style.linkTitle}> 
+                    {data?.map((item) => (
+                        <Link className={`${style.item}`} key={item?.CatId} href={`/blog/category?cat=${item.CatSlug}`}>
+                            <span className={style.category}>{item?.CatTitle}</span>
+                        </Link>
+                    ))}
+                </div>
 
             </div>
         </div>

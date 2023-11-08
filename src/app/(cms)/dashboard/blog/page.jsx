@@ -32,7 +32,7 @@ const BlogDashboard = async ({ searchParams }) => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.buttonWrapper}>
+            <div className={styles.topHeader}>
                 <Link className={styles.link} href='/dashboard/blog/write'>Create Post</Link>
             </div>
             <table>
@@ -52,8 +52,9 @@ const BlogDashboard = async ({ searchParams }) => {
                             <td className={styles.center}><Image src={item.PostImg} alt={styles.title} height={70} width={70} /></td>
                             <td><p className={styles.desc} dangerouslySetInnerHTML={{ __html: (item.PostDesc) }} /></td>
                             <td className={styles.date}>{item.CreatedAt.substring(0, 10)}</td>
-                            <td>
-                                <Button text='Update'/>
+                            <td className={styles.buttonGroup}>
+                                <Button text='View'/>
+                                <Button text='delete'/>
                             </td>
                         </tr>
                     ))

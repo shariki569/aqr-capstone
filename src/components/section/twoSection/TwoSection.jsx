@@ -6,12 +6,12 @@ import Card from '@/components/card/Card';
 const TwoSection = ({ images, title, content, icon, cta, inverse }) => {
 
 
-    const flexDirection = inverse ? 'row-reverse' : 'row';
+    const flexDirection = inverse ?  styles.rowReverse : '';
 
 
     return (
 
-        <div className={styles.container} style={{ flexDirection: flexDirection }}>
+        <div className={`${styles.container} ${flexDirection}`}>
             <div className={styles.imageContainer}>
                 <div className={styles.imageGrid}>
                     {images && images.map((img, index) => (

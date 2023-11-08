@@ -4,6 +4,11 @@
     @include centerAndSet(1300px, 3rem);
     min-height: 100dvh;
 
+    ul {
+        list-style-position: inside;
+        text-indent: -1em;
+        padding-left: 2em;
+      }
     .wrapper {
         @include flexBoxRow(1rem, center, flex-start);
 

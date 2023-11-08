@@ -4,8 +4,9 @@
     // @include fullSize;
     min-height: 100%;
     @include centerAndSet(1200px, 2rem);
-    @include flexBoxColumn(0.3rem, center, space-between);
-    .buttonWrapper {
+    // @include flexBoxColumn(0.3rem, center, space-between);
+    font-size: $f-small;
+    .topHeader {
         display: flex;
         margin: $large-spacing-y;
         width: 100%;
@@ -17,8 +18,8 @@
             color: $gray-100;
 
             border-radius: $border-radius-medium;
-            padding: $small-spacing;
-            background-color: $success;
+            padding: $small-spacing $base-spacing;
+            background-color: $primary;
         }
         // &:hover{
         //     background-color: ;
@@ -39,7 +40,7 @@
             color: $gray-200;
 
             th {
-                padding: $base-spacing;
+                padding: $small-spacing;
             }
         }
 
@@ -47,10 +48,8 @@
             font-weight: $w-normal;
             tr {
                 // @include flexBoxRow(0rem, flex-start, center);
-                background-color: white;
-                &:nth-child(2n + 1) {
-                    background-color: $gray-200;
-                }
+                background-color: $gray-100;
+          
             }
         }
     }
@@ -67,6 +66,8 @@
 
     .desc {
         @include textClamp(1);
+        padding: $base-spacing-x;
+        max-width: 600px;
     }
     .date {
         text-align: center;

@@ -11,7 +11,7 @@ const AuthLinks = () => {
 
     const { data: session, status } = useSession();
 
-    const burgerClass = [styles.burger]
+    // const burgerClass = [styles.burger]
     const toggleMenu = () => {
         setOpen(!open)
     }

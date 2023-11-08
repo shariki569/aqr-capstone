@@ -11,7 +11,7 @@
         //     @include centerAndSet(0px, 1rem);
         // }
         .items {
-            @include gridView(15rem, 0.6rem, 1fr);
+            @include gridView(10rem, 0.6rem, 1fr);
         }
     }
 }
